@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://u2o.github.io</id>
     <title>Gridea</title>
-    <updated>2019-09-19T05:29:50.945Z</updated>
+    <updated>2019-09-19T05:33:06.329Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://u2o.github.io"/>
     <link rel="self" href="https://u2o.github.io/atom.xml"/>
@@ -10,6 +10,86 @@
     <logo>https://u2o.github.io/images/avatar.png</logo>
     <icon>https://u2o.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[git的简单使用]]></title>
+        <id>https://u2o.github.io/post/git-simple-case</id>
+        <link href="https://u2o.github.io/post/git-simple-case">
+        </link>
+        <updated>2019-09-19T05:31:37.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="git工作区">git工作区</h2>
+<p>git仓库、暂存区、工作区</p>
+<h2 id="git参数配置">git参数配置</h2>
+<p>1、设置用户名<br>
+git config —global user.name  ‘username’<br>
+2、设置用户名邮箱<br>
+git config —global user.email  ‘email’<br>
+3、查看设置<br>
+config 配置有system级别 global（用户级别） 和local（当前仓库）三个 设置先从system-》global-》local  底层配置会覆盖顶层配置 分别使用--system/global/local 可以定位到配置文件<br>
+查看系统config<br>
+git config --global  --list<br>
+查看当前用户（global）配置<br>
+git config --global  --list<br>
+查看当前仓库配置信息<br>
+git config --local  --list<br>
+查看综合config<br>
+git config --list</p>
+<h2 id="常用命令">常用命令</h2>
+<ul>
+<li>初始化:<br>
+git init</li>
+<li>查看文件存储区域:<br>
+git status</li>
+<li>将某个文件更新从工作区提交到暂存区:<br>
+git add 文件路径</li>
+<li>提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)<br>
+git add -u</li>
+<li>提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件<br>
+git add .</li>
+<li>提交所有变化:<br>
+git add -A</li>
+<li>拉取远程仓库文件:<br>
+git pull</li>
+<li>将暂存区的文件更新提交到git仓库:<br>
+git commit -m'说明'</li>
+<li>删除文件:<br>
+git rm 文件路径</li>
+<li>本地连接远程仓库：<br>
+git remote add origin  git库地址</li>
+<li>本地初始化并连接远程仓库后，提交数据：<br>
+git push -u origin master</li>
+<li>克隆远程仓库到本地:<br>
+git clone 地址</li>
+<li>提交到远程仓库:<br>
+git push</li>
+</ul>
+<h2 id="常用操作">常用操作</h2>
+<ul>
+<li>git pull</li>
+<li>git add -A</li>
+<li>git commit -m'first commit'</li>
+<li>git push</li>
+</ul>
+<h2 id="为不同项目设置不同的用户名和邮箱">为不同项目设置不同的用户名和邮箱</h2>
+<p>有时候我们可能会使用多个git账号，给不同的项目设置不同的个人信息很常见。只需要进入到项目中，项目完成初始化之后，运行以下命令:</p>
+<pre><code>git  config  user.name &quot;用户名&quot;
+git  config  user.email &quot;邮箱&quot;
+</code></pre>
+<p>也可以通过更改全局配置的方式，但那样不够灵活，除非是某个账号不用了，以后只用另外一个账号</p>
+<h2 id="常见问题">常见问题</h2>
+<ol>
+<li>fatal: The remote end hung up unexpectedly</li>
+</ol>
+<blockquote>
+<p>将数据发送到远程系统时，智能HTTP传输使用的缓冲区的最大大小（以字节为单位）。<br>
+对于大于此缓冲区大小的请求，HTTP / 1.1 Transfer-Encoding: chunked用于避免在本地创建大量包文件。默认值为1 MiB，足以满足大多数请求。<br>
+<a href="https://stackoverflow.com/questions/6842687/the-remote-end-hung-up-unexpectedly-while-git-cloning">The remote end hung up unexpectedly while git cloning</a></p>
+</blockquote>
+<p>具体看是哪种传输方式(ssh还是http)，运行以下命令之一进行配置即可</p>
+<pre><code>git config --global http.postBuffer 524288000
+git config --global ssh.postBuffer 524288000
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://u2o.github.io/post/hello-gridea</id>

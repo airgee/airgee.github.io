@@ -7,7 +7,7 @@
 <title>
     Gridea
 </title>
-<link rel="shortcut icon" href="https://u2o.github.io/favicon.ico?v=1568870989078">
+<link rel="shortcut icon" href="https://u2o.github.io/favicon.ico?v=1568871179477">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://u2o.github.io">
-                <img class="avatar" src="https://u2o.github.io/images/avatar.png?v=1568870989078" alt="">
+                <img class="avatar" src="https://u2o.github.io/images/avatar.png?v=1568871179477" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,106 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://u2o.github.io/post/git-simple-case">
+                        git的简单使用
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-09-19</time>
+                    
+                        <a href="https://u2o.github.io/tag/iLWSkykw3" class="post-tag i-tag
+                            i-tag-success">
+            #git
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            git工作区
+git仓库、暂存区、工作区
+git参数配置
+1、设置用户名
+git config —global user.name  ‘username’
+2、设置用户名邮箱
+git config —global user.email  ‘email’
+3、查看设置
+config 配置有system级别 global（用户级别） 和local（当前仓库）三个 设置先从system-》global-》local  底层配置会覆盖顶层配置 分别使用--system/global/local 可以定位到配置文件
+查看系统config
+git config --global  --list
+查看当前用户（global）配置
+git config --global  --list
+查看当前仓库配置信息
+git config --local  --list
+查看综合config
+git config --list
+常用命令
+
+初始化:
+git init
+查看文件存储区域:
+git status
+将某个文件更新从工作区提交到暂存区:
+git add 文件路径
+提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+git add -u
+提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+git add .
+提交所有变化:
+git add -A
+拉取远程仓库文件:
+git pull
+将暂存区的文件更新提交到git仓库:
+git commit -m&#39;说明&#39;
+删除文件:
+git rm 文件路径
+本地连接远程仓库：
+git remote add origin  git库地址
+本地初始化并连接远程仓库后，提交数据：
+git push -u origin master
+克隆远程仓库到本地:
+git clone 地址
+提交到远程仓库:
+git push
+
+常用操作
+
+git pull
+git add -A
+git commit -m&#39;first commit&#39;
+git push
+
+为不同项目设置不同的用户名和邮箱
+有时候我们可能会使用多个git账号，给不同的项目设置不同的个人信息很常见。只需要进入到项目中，项目完成初始化之后，运行以下命令:
+git  config  user.name &amp;quot;用户名&amp;quot;
+git  config  user.email &amp;quot;邮箱&amp;quot;
+
+也可以通过更改全局配置的方式，但那样不够灵活，除非是某个账号不用了，以后只用另外一个账号
+常见问题
+
+fatal: The remote end hung up unexpectedly
+
+
+将数据发送到远程系统时，智能HTTP传输使用的缓冲区的最大大小（以字节为单位）。
+对于大于此缓冲区大小的请求，HTTP / 1.1 Transfer-Encoding: chunked用于避免在本地创建大量包文件。默认值为1 MiB，足以满足大多数请求。
+The remote end hung up unexpectedly while git cloning
+
+具体看是哪种传输方式(ssh还是http)，运行以下命令之一进行配置即可
+git config --global http.postBuffer 524288000
+git config --global ssh.postBuffer 524288000
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://u2o.github.io/post/git-simple-case">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://u2o.github.io/post/hello-gridea">
                         Hello Gridea
                     </a>
@@ -107,7 +207,7 @@
                     <time class="post-time">2018-12-12</time>
                     
                         <a href="https://u2o.github.io/tag/SpXlIhgFi" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_2">
             #Gridea
         </a>
                         
@@ -141,7 +241,7 @@
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://u2o.github.io/images/avatar.png?v=1568870989078)">
+        <div class="id_card-avatar" style="background-image: url(https://u2o.github.io/images/avatar.png?v=1568871179477)">
         </div>
         <h1 class="id_card-title">
             Gridea
