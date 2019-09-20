@@ -1,210 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.icircles.top</id>
+    <id>https://u2o.github.io</id>
     <title>一别浮云</title>
-    <updated>2019-09-20T08:27:35.672Z</updated>
+    <updated>2019-09-20T10:33:46.575Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.icircles.top"/>
-    <link rel="self" href="https://blog.icircles.top/atom.xml"/>
+    <link rel="alternate" href="https://u2o.github.io"/>
+    <link rel="self" href="https://u2o.github.io/atom.xml"/>
     <subtitle>Time And Tide Wait For No Man.</subtitle>
-    <logo>https://blog.icircles.top/images/avatar.png</logo>
-    <icon>https://blog.icircles.top/favicon.ico</icon>
+    <logo>https://u2o.github.io/images/avatar.png</logo>
+    <icon>https://u2o.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 一别浮云</rights>
     <entry>
-        <title type="html"><![CDATA[聚合和继承]]></title>
-        <id>https://blog.icircles.top/post/ju-he-he-ji-cheng</id>
-        <link href="https://blog.icircles.top/post/ju-he-he-ji-cheng">
+        <title type="html"><![CDATA[岳阳楼记]]></title>
+        <id>https://u2o.github.io/post/yue-yang-lou-ji</id>
+        <link href="https://u2o.github.io/post/yue-yang-lou-ji">
         </link>
-        <updated>2019-09-19T05:35:51.000Z</updated>
-        <summary type="html"><![CDATA[<p>聚合和继承<br>
-Maven聚合（或者称为多模块），是为了能够使用一条命令就构建多个模块</p>
+        <updated>2019-09-20T10:29:21.000Z</updated>
+        <summary type="html"><![CDATA[<p>庆历四年春，滕子京谪（封建王朝官吏降职或远调）守巴陵郡。越（及，到）明年，政通人和，百废具（同“俱”全，皆）兴。乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上。属（同“嘱”）予作文以记之。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>聚合和继承<br>
-Maven聚合（或者称为多模块），是为了能够使用一条命令就构建多个模块</p>
-<!-- more -->
-<h2 id="聚合">聚合</h2>
-<p>Maven聚合（或者称为多模块），是为了能够使用一条命令就构建多个模块，方便快速构建项目，例如已经有两个模块，分别为A,B，我们需要创建一个额外的模块（假设名字为aggregator，然后通过该模块，来构建整个项目的所有模块，aggregator本身作为一个Maven项目，它必须有自己的POM,不过作为一个聚合项目，其POM又有特殊的地方，看下面的配置</p>
+        <content type="html"><![CDATA[<p>庆历四年春，滕子京谪（封建王朝官吏降职或远调）守巴陵郡。越（及，到）明年，政通人和，百废具（同“俱”全，皆）兴。乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上。属（同“嘱”）予作文以记之。</p>
 <!--more-->
-<pre><code class="language-xml">&lt;project
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-        xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0
-        http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
-        &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-        &lt;groupId&gt;com.yangyuanming&lt;/groupId&gt;
-        &lt;artifact&gt;aggregator&lt;/artifact&gt;
-        &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
-        &lt;packaging&gt;pom&lt;/packaging&gt;
-        &lt;name&gt;Aggregator&lt;/name&gt;
-        &lt;modules&gt;
-            &lt;module&gt;../A&lt;/module&gt;
-            &lt;module&gt;../B&lt;/module&gt;
-        &lt;/modules&gt;
-&lt;/project&gt;
-</code></pre>
-<p>必须声明<code>&lt;packaging&gt;</code>为pom，<strong>对于聚合模块来说，其打包方式必须为pom</strong>，否则无法构建。<br>
-<code>&lt;modules&gt;</code>里的每一个<code>&lt;module&gt;</code>都可以用来指定一个被聚合模块，这里每个<code>&lt;module&gt;</code>的值都是一个当前pom的相对位置，本例中A、B和aggregator位于同一级目录下。</p>
-<h2 id="继承">继承</h2>
-<p>为了消除多模块项目中的重复配置，类似于java，maven中也有继承，一次声明，多次使用。父项目的pom.xml声明的配置，子项目pom.xml不需要声明就可以直接使用，子项目的配置可以覆盖父项目的配置。很多时候，我们使用继承主要是为了方便管理引用的构件(依赖和插件)。<br>
-一个项目往往分为很多模块，而不同的模块中，引用的构件很多是一样的，使用继承就避免了在不同模块中重复引用的问题，同时也方便统一管理构件，构件版本号统一。</p>
-<h3 id="继承示例">继承示例</h3>
-<blockquote>
-<p>父模块pom.xml</p>
-</blockquote>
-<pre><code class="language-xml">&lt;project
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-xsi:shemaLocation=&quot;http://maven.apache.org/POM/4.0.0
-http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-    &lt;groupId&gt;com.yangyuanming&lt;/groupId&gt;
-    &lt;artifactId&gt;parent&lt;/artifactId&gt;
-    &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
-    &lt;packaging&gt;pom&lt;/packaging&gt;
-    &lt;name&gt;Parent&lt;/name&gt;
-    &lt;dependencies&gt;
-        ....
-    &lt;/dependencies&gt;
-    &lt;build&gt;
-        &lt;plugins&gt;
-            ....
-        &lt;/plugins&gt;
-    &lt;/build&gt;
-&lt;/project&gt;
-</code></pre>
-<p><code>&lt;packaging&gt;</code>的值必须为pom，由于父模块只是为了帮助消除配置的重复，因此它本身不包含除POM之外的项目文件，可以把项目中src/main/java和src/test/java目录删除。<strong>继承的是父模块的pom.xml</strong>。</p>
-<p>子模块pom.xml</p>
-<pre><code class="language-xml">&lt;project   
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-xsi:shemaLocation=&quot;http://maven.apache.org/POM/4.0.0
-http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
-    &lt;parent&gt;
-        &lt;groupId&gt;com.yangyuanming&lt;groupId&gt;
-        &lt;artifactId&gt;parent&lt;/artifactId&gt;
-        &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
-        &lt;relativePath&gt;../parent/pom.xml&lt;/relativePath&gt;
-    &lt;/parent&gt;
-    
-    &lt;artifactId&gt;A&lt;/artifactId&gt;
-    
-    &lt;name&gt;artifactId-A&lt;/name&gt;
-    &lt;dependencies&gt;
-        ....
-    &lt;/dependencies&gt;
-    &lt;build&gt;
-        &lt;plugins&gt;
-            ....
-        &lt;/plugins&gt;
-    &lt;/build&gt;
-&lt;/project&gt;
-</code></pre>
-<p>上面POM中使用parent元素声明父模块，<strong>paren下的子元素groupId、artifactId和version指定了父模块的坐标，这三个元素是必须的</strong>。元素relativePath表示了<strong>父模块POM</strong>的相对路径。相对路径允许你选择一个不同的路径。默认值是../pom.xml。当项目构建时，Maven会首先根据relativePath检查父pom，然后在本地仓库，最后在远程仓库寻找父项目的pom。此例子父模块parent和子模块在同一级目录下。</p>
-<p>子模块会自动继承父模块的配置，子模块配置会覆盖从父模块继承来的配置。上面子模块child没有声明groupId，version，因为这个子模块隐式的从父模块继承了这两个元素，这也就消除了不必要的配置。上例中，父子模块使用了相同的groupId和version，如果遇到子模块需要使用和父模块不一样的groupId或者version的情况，可以在子模块中显式声明。子模块会自动继承父模块的插件和依赖，不需要再重新显式引入，这大大方便了多模块开发的管理。然而所有的子模块会将父pom.xml中定义的所有构件继承下来，不同模块所需的构件还是会有一点差别的，存在继承多余构件的问题，怎么办呢？看下一篇文章吧！</p>
-<h3 id="可继承的pom元素">可继承的pom元素</h3>
-<ul>
-<li>groupId:项目组ID,项目坐标的核心元素</li>
-<li>version:项目版本,项目坐标的核心元素</li>
-<li>description:项目的描述信息</li>
-<li>organnization:项目的组织信息</li>
-<li>inceptionYear:项目的创始年份</li>
-<li>url:项目的URL地址</li>
-<li>developers:项目的开发者信息</li>
-<li>contributors:项目的贡献者信息</li>
-<li>distributionManagement:项目的部署配置</li>
-<li>issueManagement:项目的缺陷跟踪系统信息</li>
-<li>ciManagement:项目的集成信息</li>
-<li>scm:项目的版本控制系统信息</li>
-<li>mailingLists:项目的邮件列表信息</li>
-<li>properties:自定义的Maven属性</li>
-<li>dependencies:项目的依赖配置</li>
-<li>dependencyManagement:项目的依赖管理配置</li>
-<li>repositories:项目的仓库配置</li>
-<li>build:包括项目的源码目录配置、输出目录配置、插件配置、插件管理配置等</li>
-<li>reporting:包括项目的报告输出目录配置，报告插件配置等。</li>
-</ul>
-<h2 id="参考资料">参考资料</h2>
-<blockquote>
-<p><strong>lofty</strong>，<a href="https://www.cnblogs.com/wangwei-beijing/p/6535084.html">Maven——聚合与继承</a></p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[git的简单使用]]></title>
-        <id>https://blog.icircles.top/post/git-simple-case</id>
-        <link href="https://blog.icircles.top/post/git-simple-case">
-        </link>
-        <updated>2019-09-19T05:31:37.000Z</updated>
-        <content type="html"><![CDATA[<!-- more -->
-<h2 id="git工作区">git工作区</h2>
-<p>git仓库、暂存区、工作区</p>
-<h2 id="git参数配置">git参数配置</h2>
-<p>1、设置用户名<br>
-git config —global user.name  ‘username’<br>
-2、设置用户名邮箱<br>
-git config —global user.email  ‘email’<br>
-3、查看设置<br>
-config 配置有system级别 global（用户级别） 和local（当前仓库）三个 设置先从system-》global-》local  底层配置会覆盖顶层配置 分别使用--system/global/local 可以定位到配置文件<br>
-查看系统config<br>
-git config --global  --list<br>
-查看当前用户（global）配置<br>
-git config --global  --list<br>
-查看当前仓库配置信息<br>
-git config --local  --list<br>
-查看综合config<br>
-git config --list</p>
-<h2 id="常用命令">常用命令</h2>
-<ul>
-<li>初始化:<br>
-git init</li>
-<li>查看文件存储区域:<br>
-git status</li>
-<li>将某个文件更新从工作区提交到暂存区:<br>
-git add 文件路径</li>
-<li>提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)<br>
-git add -u</li>
-<li>提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件<br>
-git add .</li>
-<li>提交所有变化:<br>
-git add -A</li>
-<li>拉取远程仓库文件:<br>
-git pull</li>
-<li>将暂存区的文件更新提交到git仓库:<br>
-git commit -m'说明'</li>
-<li>删除文件:<br>
-git rm 文件路径</li>
-<li>本地连接远程仓库：<br>
-git remote add origin  git库地址</li>
-<li>本地初始化并连接远程仓库后，提交数据：<br>
-git push -u origin master</li>
-<li>克隆远程仓库到本地:<br>
-git clone 地址</li>
-<li>提交到远程仓库:<br>
-git push</li>
-</ul>
-<h2 id="常用操作">常用操作</h2>
-<ul>
-<li>git pull</li>
-<li>git add -A</li>
-<li>git commit -m'first commit'</li>
-<li>git push</li>
-</ul>
-<h2 id="为不同项目设置不同的用户名和邮箱">为不同项目设置不同的用户名和邮箱</h2>
-<p>有时候我们可能会使用多个git账号，给不同的项目设置不同的个人信息很常见。只需要进入到项目中，项目完成初始化之后，运行以下命令:</p>
-<pre><code>git  config  user.name &quot;用户名&quot;
-git  config  user.email &quot;邮箱&quot;
-</code></pre>
-<p>也可以通过更改全局配置的方式，但那样不够灵活，除非是某个账号不用了，以后只用另外一个账号</p>
-<h2 id="常见问题">常见问题</h2>
-<ol>
-<li>fatal: The remote end hung up unexpectedly</li>
-</ol>
-<blockquote>
-<p>将数据发送到远程系统时，智能HTTP传输使用的缓冲区的最大大小（以字节为单位）。<br>
-对于大于此缓冲区大小的请求，HTTP / 1.1 Transfer-Encoding: chunked用于避免在本地创建大量包文件。默认值为1 MiB，足以满足大多数请求。<br>
-<a href="https://stackoverflow.com/questions/6842687/the-remote-end-hung-up-unexpectedly-while-git-cloning">The remote end hung up unexpectedly while git cloning</a></p>
-</blockquote>
-<p>具体看是哪种传输方式(ssh还是http)，运行以下命令之一进行配置即可</p>
-<pre><code>git config --global http.postBuffer 524288000
-git config --global ssh.postBuffer 524288000
-</code></pre>
+<p>予观夫巴陵胜状（好风景），在洞庭一湖。衔远山，吞长江，浩浩汤汤（水波浩荡的样子），横（广远）无际（边）涯；朝晖（日光）夕阴，气象万千。此则岳阳楼之大观也。前人之述备矣。然则北通巫峡，南极（尽）潇湘，迁客骚人，多会于此，览物之情，得无异乎？</p>
+<p>若夫霪雨（连绵不断的雨）霏霏，连月不开（放晴），阴风怒号，浊浪排空（冲向天空）；日星隐耀，山岳潜形；商旅不行，樯倾楫摧；薄（迫近）暮冥冥，虎啸猿啼。登斯楼也，则有去国怀乡，忧谗畏讥，满目萧然，感极而悲者矣。</p>
+<p>至若春和景（日光）明，波澜不惊，上下天光，一碧万顷；沙鸥翔集，锦鳞（美丽的鱼）游泳；岸芷汀兰，郁郁青青。而或长烟一空，皓月千里，浮光跃金，静影沉璧，渔歌互答，此乐何极！登斯楼也，则有心旷神怡，宠辱偕忘，把（持）酒临风，其喜洋洋者矣。</p>
+<p>嗟夫！予尝（曾经）求（探求）古仁人之心，或异二者之为，何哉？不以物喜，不以己悲；居庙堂之高则忧其民；处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰“先天下之忧而忧，后天下之乐而乐”乎。噫！微（没有）斯人，吾谁与归（归依？</p>
+<p>时六年九月十五日。</p>
 ]]></content>
     </entry>
 </feed>
