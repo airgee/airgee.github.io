@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://u2o.github.io</id>
+    <id>https://blog.icircles.top</id>
     <title>一别浮云</title>
-    <updated>2019-09-20T08:10:54.302Z</updated>
+    <updated>2019-09-20T08:27:35.672Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://u2o.github.io"/>
-    <link rel="self" href="https://u2o.github.io/atom.xml"/>
+    <link rel="alternate" href="https://blog.icircles.top"/>
+    <link rel="self" href="https://blog.icircles.top/atom.xml"/>
     <subtitle>Time And Tide Wait For No Man.</subtitle>
-    <logo>https://u2o.github.io/images/avatar.png</logo>
-    <icon>https://u2o.github.io/favicon.ico</icon>
+    <logo>https://blog.icircles.top/images/avatar.png</logo>
+    <icon>https://blog.icircles.top/favicon.ico</icon>
     <rights>All rights reserved 2019, 一别浮云</rights>
     <entry>
         <title type="html"><![CDATA[聚合和继承]]></title>
-        <id>https://u2o.github.io/post/ju-he-he-ji-cheng</id>
-        <link href="https://u2o.github.io/post/ju-he-he-ji-cheng">
+        <id>https://blog.icircles.top/post/ju-he-he-ji-cheng</id>
+        <link href="https://blog.icircles.top/post/ju-he-he-ji-cheng">
         </link>
         <updated>2019-09-19T05:35:51.000Z</updated>
         <summary type="html"><![CDATA[<p>聚合和继承<br>
@@ -128,8 +128,8 @@ http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
     </entry>
     <entry>
         <title type="html"><![CDATA[git的简单使用]]></title>
-        <id>https://u2o.github.io/post/git-simple-case</id>
-        <link href="https://u2o.github.io/post/git-simple-case">
+        <id>https://blog.icircles.top/post/git-simple-case</id>
+        <link href="https://blog.icircles.top/post/git-simple-case">
         </link>
         <updated>2019-09-19T05:31:37.000Z</updated>
         <content type="html"><![CDATA[<!-- more -->
